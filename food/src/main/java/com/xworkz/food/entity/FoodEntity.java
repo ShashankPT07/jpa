@@ -1,0 +1,26 @@
+package com.xworkz.food.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "food_tb")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@NamedQuery(name="readAll", query="select e from FoodEntity e")
+public class FoodEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+private int id;
+    private String food;
+    private int rating;
+    private String category;
+    private double price;
+    private String description;
+}
